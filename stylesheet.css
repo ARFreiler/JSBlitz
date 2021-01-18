@@ -135,4 +135,13 @@ html {
         font-weight: bold;
       }
     
+      #correct {
+        color:  #4616E8;
+       }
+       
+       #wrong {
+         color: #E81648;
+       }
+       
+      
     
