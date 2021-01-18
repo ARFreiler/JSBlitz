@@ -3,7 +3,7 @@ html {
   }
   
   body {
-    /*System fonts*/
+    /* System fonts */
     font-family: -apple-system, BlinkMacSystemFont,
       “Segoe UI”, “Roboto”, “Oxygen”, “Ubuntu”, “Cantarell”,
       “Fira Sans”, “Droid Sans”, “Helvetica Neue”,
@@ -17,19 +17,19 @@ html {
     flex-direction: column;
   }
 
-   /*****Text styles*****/
-  /*Headings*/
+   /* Text styles */
+  /* Headings */
   h1 {
     margin: 0;
     font-size: 2em;
   }
   
-  /*Icons*/
+  /* Icons */
   .fas {
     margin-right: 10px;
   }
 
-    /*Clickable*/
+    /* Clickabl e*/
     a {
         color: #4616E8;
         text-decoration: none;
@@ -76,14 +76,27 @@ html {
         margin-left: 0;
       }
       
-      /*****Hidden*****/
+      /* Hidden */
       .hidden {
         display: none;
       }
     
-       /*****Nav*****/
-  nav {
+       /* Nav */
+    nav {
     padding: 15px;
     border-bottom: 1px solid #CECECE;
+    }
+  
+      /* Sections */
+  main {
+    display: flex;
+    flex-direction: column;
+  
+    width: 80%;
+    margin: auto;
+    height: 75%;
+    box-sizing: border-box;
+    padding: 20px 0;
   }
   
+
