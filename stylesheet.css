@@ -99,8 +99,13 @@ html {
     padding: 20px 0;
   }
   
-    /*****Start*****/
+    /* Start */
     #start {
         text-align: center;
       }
     
+    /* Quiz-questions */
+    #question {
+    font-size: 1.4em;
+    }
+
