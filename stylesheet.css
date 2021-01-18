@@ -16,3 +16,15 @@ html {
     display: flex;
     flex-direction: column;
   }
+
+   /*****Text styles*****/
+  /*Headings*/
+  h1 {
+    margin: 0;
+    font-size: 2em;
+  }
+  
+  /*Icons*/
+  .fas {
+    margin-right: 10px;
+  }
