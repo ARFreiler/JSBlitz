@@ -1,6 +1,6 @@
 // Body
-const QUIZ_SECTIONS = document.querySelectorAll(".quiz-section");
+var QUIZ_SECTIONS = document.querySelectorAll(".quiz-section");
 
 /Start
-const START_SECTION = document.getElementById("start");
-const START_BTN = document.getElementById("start-button");
+var START_SECTION = document.getElementById("start");
+var START_BTN = document.getElementById("start-button");
