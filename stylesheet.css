@@ -120,4 +120,19 @@ html {
       #time-remaining{
         color: #4616E8;
       }
+
+      #choices {
+        list-style: none;
+        padding-left: 0;
+      }
+      
+      #choices button {
+        margin-left: 0;
+      }
+      
+      .choice-status {
+        font-size: 1.35em;
+        font-weight: bold;
+      }
+    
     
