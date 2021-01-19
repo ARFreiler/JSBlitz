@@ -143,5 +143,21 @@ html {
          color: #E81648;
        }
        
-      
+        /* Gray line before choice status */
+       #quiz-questions, 
+       #end {
+       border-bottom: 1px solid #CECECE;
+       padding-bottom: 15px;
+       }
+
+       /*****End*****/
+       #score-text {
+       font-size: 1.2em;
+       }
+  
+       #score {
+       font-weight: bold;
+       color: #4616E8;
+       }
+  
     
