@@ -108,7 +108,7 @@ function displayQuestion() {
 function displayChoiceList() {
   CHOICES.innerHTML = "";
 
-  QUESTION_LIST[currentQuestion].choices.forEach(function(answer, index) {
+  QUESTION_LIST[currentQuestion].choices.forEach(function (answer, index) {
     const li = document.createElement("li");
     li.dataset.index = index;
     const button = document.createElement("button");
@@ -127,4 +127,65 @@ function processChoice(event) {
   getNextQuestion();
 }
 
+// Displaying choice statuses
+function resetChoiceStatusEffects() {
+  clearTimeout(choiceStatusTimeout);
+  styleTimeRemainingDefault();
+}
+
+function styleTimeRemainingDefault() {
+  TIME_REMAINING.style.color = "#4616E8";
+}
+
+function styleTimeRemainingWrong() {
+  TIME_REMAINING.style.color = "#E81648";
+}
+
+function checkChoice(userChoice) {
+  if (isChoiceCorrect(userChoice)) {
+    displayCorrectChoiceEffects();
+  } else {
+    displayWrongChoiceEffects();
+  }
+}
+
+function isChoiceCorrect(choice) {
+  return choice === QUESTION_LIST[currentQuestion].indexOfCorrectChoice;
+}
+
+function displayWrongChoiceEffects() {
+  deductTimeBy(10);
+
+  styleTimeRemainingWrong();
+  showElement(CHOICE_STATUSES, WRONG);
+
+  choiceStatusTimeout = setTimeout(function () {
+    hideElement(WRONG);
+    styleTimeRemainingDefault();
+  }, 1000);
+}
+
+function deductTimeBy(seconds) {
+  totalTime -= seconds;
+  checkTime();
+  displayTime();
+}
+
+function displayCorrectChoiceEffects() {
+  showElement(CHOICE_STATUSES, CORRECT);
+
+  choiceStatusTimeout = setTimeout(function () {
+    hideElement(CORRECT);
+  }, 1000);
+}
+
+//Get next question
+function getNextQuestion() {
+  currentQuestion++;
+  if (currentQuestion >= QUESTION_LIST.length) {
+    endGame();
+  } else {
+    displayQuestion();
+  }
+}
 
