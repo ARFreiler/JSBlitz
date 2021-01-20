@@ -48,7 +48,17 @@ class Question {
   let totalTimeInterval;
   let choiceStatusTimeout; 
   
-  /******** EVENT LISTENERS ********/ 
+  // Event Listeners
   START_BTN.addEventListener('click', startGame);
   CHOICES.addEventListener('click', processChoice);
   SUBMIT_SCORE.addEventListener('submit', processInput);
+
+  // Start Game
+  function startGame() {
+  showElement(QUIZ_SECTIONS, QUIZ_SECTION);
+  
+  displayTime();  
+  displayQuestion();
+
+  startTimer();
+  }
