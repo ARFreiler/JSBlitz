@@ -179,13 +179,34 @@ function displayCorrectChoiceEffects() {
   }, 1000);
 }
 
-//Get next question
+// Get next question
 function getNextQuestion() {
   currentQuestion++;
   if (currentQuestion >= QUESTION_LIST.length) {
     endGame();
   } else {
     displayQuestion();
+  }
+}
+
+/******** ENDING THE GAME ********/ 
+function endGame() {
+  clearInterval(totalTimeInterval);
+  
+  showElement(QUIZ_SECTIONS, END_SECTION);
+  displayScore();
+  setEndHeading();
+}
+
+function displayScore() {
+  SCORE.textContent = totalTime;
+}
+
+function setEndHeading() {
+  if (totalTime === 0) {
+    END_TITLE.textContent = "Sorry! You ran out of time!";
+  } else {
+    END_TITLE.textContent = "Congratulations! You answered all the questions before your time ran out!";
   }
 }
 
