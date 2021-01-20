@@ -48,3 +48,7 @@ class Question {
   let totalTimeInterval;
   let choiceStatusTimeout; 
   
+  /******** EVENT LISTENERS ********/ 
+  START_BTN.addEventListener('click', startGame);
+  CHOICES.addEventListener('click', processChoice);
+  SUBMIT_SCORE.addEventListener('submit', processInput);
