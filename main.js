@@ -62,3 +62,18 @@ class Question {
 
   startTimer();
   }
+
+  // Show/ Hide Elements 
+  function showElement(siblingList, showElement) {
+  for (element of siblingList) {
+    hideElement(element);
+  }
+  showElement.classList.remove("hidden");
+  } 
+
+  function hideElement(element) {
+  if (!element.classList.contains("hidden")) {
+    element.classList.add("hidden");
+  }
+  }
+
