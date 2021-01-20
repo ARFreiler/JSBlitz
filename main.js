@@ -24,56 +24,76 @@ const ERROR_MESSAGE = document.getElementById("error-message");
 
 // Questions Element
 class Question {
-    constructor(question, choices, indexOfCorrectChoice) {
-      this.question = question;
-      this.choices = choices;
-      this.indexOfCorrectChoice = indexOfCorrectChoice;
-    }
+  constructor(question, choices, indexOfCorrectChoice) {
+    this.question = question;
+    this.choices = choices;
+    this.indexOfCorrectChoice = indexOfCorrectChoice;
   }
-  const QUESTION_1 = new Question("Commonly used data types DO NOT include: ", 
-    ["Strings", "Booleans", "Alerts", "Numbers"], 2);
-  const QUESTION_2 = new Question("The condition in an if / else statement is enclosed within ____.", 
-    ["Quotes", "Curly brackets", "Parentheses", "Square brackets"], 2);
-  const QUESTION_3 = new Question("Arrays in JavaScript can be used to store ____.", 
-    ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
-  const QUESTION_4 = new Question("String values must be enclosed within _____ when being assigned to variables.", 
-    ["Commas", "Curly brackets", "Quotes", "Parentheses"], 2);
-  const QUESTION_5 = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ", 
-    ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
-  const QUESTION_LIST = [QUESTION_1, QUESTION_2, QUESTION_3, QUESTION_4, QUESTION_5];
-  
-  let currentQuestion = 0;
-  
-  let totalTime = 60;
-  let totalTimeInterval;
-  let choiceStatusTimeout; 
-  
-  // Event Listeners
-  START_BTN.addEventListener('click', startGame);
-  CHOICES.addEventListener('click', processChoice);
-  SUBMIT_SCORE.addEventListener('submit', processInput);
+}
+const QUESTION_1 = new Question("Commonly used data types DO NOT include: ",
+  ["Strings", "Booleans", "Alerts", "Numbers"], 2);
+const QUESTION_2 = new Question("The condition in an if / else statement is enclosed within ____.",
+  ["Quotes", "Curly brackets", "Parentheses", "Square brackets"], 2);
+const QUESTION_3 = new Question("Arrays in JavaScript can be used to store ____.",
+  ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
+const QUESTION_4 = new Question("String values must be enclosed within _____ when being assigned to variables.",
+  ["Commas", "Curly brackets", "Quotes", "Parentheses"], 2);
+const QUESTION_5 = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ",
+  ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
+const QUESTION_LIST = [QUESTION_1, QUESTION_2, QUESTION_3, QUESTION_4, QUESTION_5];
 
-  // Start Game
-  function startGame() {
+let currentQuestion = 0;
+
+let totalTime = 60;
+let totalTimeInterval;
+let choiceStatusTimeout;
+
+// Event Listeners
+START_BTN.addEventListener('click', startGame);
+CHOICES.addEventListener('click', processChoice);
+SUBMIT_SCORE.addEventListener('submit', processInput);
+
+// Start Game
+function startGame() {
   showElement(QUIZ_SECTIONS, QUIZ_SECTION);
-  
-  displayTime();  
+
+  displayTime();
   displayQuestion();
 
   startTimer();
-  }
+}
 
-  // Show/ Hide Elements 
-  function showElement(siblingList, showElement) {
+// Show/ Hide Elements 
+function showElement(siblingList, showElement) {
   for (element of siblingList) {
     hideElement(element);
   }
   showElement.classList.remove("hidden");
-  } 
+}
 
-  function hideElement(element) {
+function hideElement(element) {
   if (!element.classList.contains("hidden")) {
     element.classList.add("hidden");
   }
-  }
+}
 
+// Time 
+function displayTime() {
+  TIME_REMAINING.textContent = totalTime;
+}
+
+function startTimer() {
+  totalTimeInterval = setInterval(function () {
+    totalTime--;
+    displayTime();
+    checkTime();
+
+  }, 1000);
+}
+
+function checkTime() {
+  if (totalTime <= 0) {
+    totalTime = 0;
+    endGame();
+  }
+}
