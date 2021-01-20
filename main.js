@@ -118,4 +118,13 @@ function displayChoiceList() {
   });
 }
 
+// Processes users choice and cycles to next question
+function processChoice(event) {
+  const userChoice = parseInt(event.target.parentElement.dataset.index);
+
+  resetChoiceStatusEffects();
+  checkChoice(userChoice);
+  getNextQuestion();
+}
+
 
