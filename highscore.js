@@ -53,3 +53,11 @@ function addHighscoreTableRows(highscores) {
     tableRow.appendChild(initialsCell);
     return tableRow;
   }
+
+  // Clear highscore chart
+function clearHighscores() {
+    localStorage.setItem('scoreList', []);
+    while (HIGHSCORE_TABLE.children.length > 1) {
+      HIGHSCORE_TABLE.removeChild(HIGHSCORE_TABLE.lastChild);
+    }
+  }
