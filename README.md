@@ -32,5 +32,11 @@ Open index.html in Chrome
 
 ## Repository
 
+(https://arfreiler.github.io/JSBlitz.github.io/)
+
+## Project Screenshot
+([Screen Shot 2021-01-20 at 11 02 55 PM](https://user-images.githubusercontent.com/75546695/105280979-17005400-5b79-11eb-8244-e4dd5c895310.png)
+)
+
 
 
