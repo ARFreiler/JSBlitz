@@ -18,4 +18,19 @@ The aim of this project was to create a quiz to test a users proficiency in Java
 Open index.html in Chrome
 
 ## Credits
+(https://www.w3schools.com/)
+
+(https://www.tutorialrepublic.com/)
+
+(https://www.youtube.com/)
+
+(https://developer.mozilla.org/en-US/docs/Web/API/EventListener)
+
+(https://jquery.com/)
+
+(https://fontawesome.com/)
+
+## Repository
+
+
 
